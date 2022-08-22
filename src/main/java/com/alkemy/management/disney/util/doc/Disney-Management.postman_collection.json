@@ -1,0 +1,337 @@
+{
+	"info": {
+		"_postman_id": "ae793e1f-b12a-4dd9-bde9-a45d8f1efd71",
+		"name": "Disney-Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19824364"
+	},
+	"item": [
+		{
+			"name": "Gender",
+			"item": [
+				{
+					"name": "genres",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Terror\",\r\n    \"image\": \"/img/genres/terror/scary_movie.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/genres",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"genres"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "genres",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/genres",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"genres"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Characters",
+			"item": [
+				{
+					"name": "/characters",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"image\": \"https://static.wikia.nocookie.net/disney/images/9/9a/Bruno_Encanto.png/revision/latest?cb=20211121211709&path-prefix=es\",\r\n    \"name\": \"Abuela Alma\",\r\n    \"age\": 44,\r\n    \"weight\": 48.5,\r\n    \"history\": \"Abuela Alma es la matriarca de la Familia Madrigal. Cuando ella era más joven, cuando Pepa, Julieta y Bruno eran bebés, un milagro los bendijo a ellos y a su vela, creando La Casa Madrigal.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/characters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"characters"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/characters/all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/characters/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"characters",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "characters?filters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/characters?weight=45.5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"characters"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Jan",
+									"disabled": true
+								},
+								{
+									"key": "age",
+									"value": "24",
+									"disabled": true
+								},
+								{
+									"key": "weight",
+									"value": "45.5"
+								},
+								{
+									"key": "movies",
+									"value": "1,16",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/characters/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/characters/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"characters",
+								"8"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/characters/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/characters/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"characters",
+								"1"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movies",
+			"item": [
+				{
+					"name": "/movies",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"image\": \"https://lumiere-a.akamaihd.net/v1/images/encanto_ka_las_pay1_92ad7410.jpeg\",\r\n    \"title\": \"spider man\",\r\n    \"creationDate\": \"2021-10-24\",\r\n    \"rating\": 9.5,\r\n    \"history\": \"La magia de este Encanto ha bendecido a todos los niños y niñas de la familia con un don único, desde súper fuerza hasta el poder de sanar. A todos, excepto a Mirabel. Sin embargo, ella podría ser la última esperanza de su excepcional familia\",\r\n    \"gender\": {\r\n        \"image\": \"https://leganerd.com/wp-content/uploads/2021/10/encanto-nuova-cover.jpg\",\r\n        \"name\": \"Fantasía musical animada\"\r\n    },\r\n    \"characters\": [\r\n        {\r\n            \"image\": \"https://static.wikia.nocookie.net/disney/images/9/9a/Bruno_Encanto.png/revision/latest?cb=20211121211709&path-prefix=es\",\r\n            \"name\": \"Bruno Madrigal\",\r\n            \"age\": 15,\r\n            \"weight\": 40.5,\r\n            \"history\": \"Bruno es el tío materno de Mirabel, cuyo don es la capacidad de ver el futuro. Su don causó la miseria de su pueblo natal debido a que solo veía las catástrofes y desgracias que iban a pasar.\"\r\n        },\r\n        {\r\n            \"image\": \"https://static.wikia.nocookie.net/disney/images/d/df/Alma_Madrigal.png/revision/latest?cb=20220203221001&path-prefix=es\",\r\n            \"name\": \"Alma Madrigal\",\r\n            \"age\": 64,\r\n            \"weight\": 55.5,\r\n            \"history\": \"Abuela Alma es la matriarca de la Familia Madrigal. Cuando ella era más joven, cuando Pepa, Julieta y Bruno eran bebés, un milagro los bendijo a ellos y a su vela, creando La Casa Madrigal.\"\r\n        },\r\n        {\r\n            \"image\": \"https://static.wikia.nocookie.net/disney/images/7/78/IsabellaMadrigal.png/revision/latest?cb=20211119173402&path-prefix=es\",\r\n            \"name\": \"Isabela Madrigal\",\r\n            \"age\": 25,\r\n            \"weight\": 45.5,\r\n            \"history\": \"Isabela fue la primera hija de Julieta y Agustín Madrigal, la primera nieta de la Abuela Alma y hermana mayor de Mirabel y Luisa. En algún momento de su infancia, recibió su don de poder crear hermosas flores y plantas.\"\r\n        },\r\n        {\r\n            \"image\": \"https://static.wikia.nocookie.net/disney/images/2/2e/Antonio_Madrigal.jpg/revision/latest?cb=20211119180254&path-prefix=es\",\r\n            \"name\": \"Antonio Madrigal\",\r\n            \"age\": 9,\r\n            \"weight\": 25.5,\r\n            \"history\": \"Antonio es el primo menor de Mirabel, es el hijo menor de Pepa y Félix y el hermano pequeño de Dolores y Camilo. Lo que hace único a Antonio entre la familia Madrigal es que es capaz de hablar con los animales.\"\r\n        },\r\n        {\r\n            \"image\": \"https://static.wikia.nocookie.net/disney/images/e/e7/Mirabel_Madrigal.png/revision/latest?cb=20211118182717&path-prefix=es\",\r\n            \"name\": \"Mirabel Madrigal\",\r\n            \"age\": 24,\r\n            \"weight\": 48.5,\r\n            \"history\": \"Mirabel es la hija menor de Julieta Madrigal y Agustín Madrigal y la única familiar Madrigal que no recibió un poder mágico.\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/movies/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies?filters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/movies?order=DESC",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "spider",
+									"disabled": true
+								},
+								{
+									"key": "genres",
+									"value": "2,9",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "DESC"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movie/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/movies/36",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"36"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movie/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/movies/43",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"43"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
