@@ -14,7 +14,7 @@ import com.alkemy.management.disney.entity.MovieEntity;
 @Component
 public class FullMovieMapper {
   @Autowired
-  private GenderMapper genderMapper;
+  private FullGenderMapper fullGenderMapper;
 
   @Autowired
   private FullCharacterMapper characterMapper;
@@ -29,7 +29,7 @@ public class FullMovieMapper {
     movieEntity.setCreationDate(dto.getCreationDate());
     movieEntity.setRating(dto.getRating());
     movieEntity.setHistory(dto.getHistory());
-    movieEntity.setGender(genderMapper.genderDTO2Entity(dto.getGender()));
+    movieEntity.setGender(fullGenderMapper.genderDTO2Entity(dto.getGender()));
 
     movieEntity.setCharacters(characterMapper.hashSetCharacterDTOs2CharacterEntities(dto.getCharacters()));
 
@@ -48,7 +48,7 @@ public class FullMovieMapper {
     movieDTO.setRating(entity.getRating());
     movieDTO.setHistory(entity.getHistory());
     
-    FullGenderDTO genderDTO = genderMapper.genderEntity2DTO(entity.getGender());
+    FullGenderDTO genderDTO = fullGenderMapper.genderEntity2DTO(entity.getGender());
     movieDTO.setGender(genderDTO);
     
     movieDTO.setCharacters(new HashSet<>());

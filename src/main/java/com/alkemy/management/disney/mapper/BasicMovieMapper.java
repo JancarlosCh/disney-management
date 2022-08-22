@@ -13,7 +13,7 @@ import com.alkemy.management.disney.entity.MovieEntity;
 public class BasicMovieMapper {
 
   @Autowired
-  GenderMapper genderMapper;
+  FullGenderMapper fullGenderMapper;
 
   // Convierte un DTO básico de película a una entidad pélicula
   public MovieEntity basicMovieDTO2Entity(BasicMovieDTO dto) {
@@ -25,7 +25,7 @@ public class BasicMovieMapper {
     movieEntity.setCreationDate(dto.getCreationDate());
     movieEntity.setRating(dto.getRating());
     movieEntity.setHistory(dto.getHistory());
-    movieEntity.setGender(genderMapper.genderDTO2Entity(dto.getGender()));
+    movieEntity.setGender(fullGenderMapper.genderDTO2Entity(dto.getGender()));
 
     return movieEntity;
   }
@@ -41,7 +41,7 @@ public class BasicMovieMapper {
     basicMovieDTO.setCreationDate(entity.getCreationDate());
     basicMovieDTO.setRating(entity.getRating());
     basicMovieDTO.setHistory(entity.getHistory());
-    basicMovieDTO.setGender(genderMapper.genderEntity2DTO(entity.getGender()));
+    basicMovieDTO.setGender(fullGenderMapper.genderEntity2DTO(entity.getGender()));
 
     return basicMovieDTO;
   }
