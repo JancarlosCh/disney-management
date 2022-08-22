@@ -7,9 +7,7 @@ import org.springframework.http.HttpStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-// @Data -> genera getters, toString, equals y hashcode
 @Data
-// @AllArgsConstructor -> Genera un constructor con todos los parámetros
 @AllArgsConstructor
 public class ApiErrorDTO {
   private HttpStatus status;
