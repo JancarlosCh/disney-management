@@ -9,7 +9,7 @@ import com.alkemy.management.disney.entity.GenderEntity;
 import com.alkemy.management.disney.dto.FullGenderDTO;
 
 @Component
-public class GenderMapper {
+public class FullGenderMapper {
 
   // Convierte un DTO detallado de género de pelicula a una entidad
   public GenderEntity genderDTO2Entity(FullGenderDTO dto) {
